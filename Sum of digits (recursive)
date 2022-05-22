@@ -1,0 +1,13 @@
+int sumOfDigits(int n) {
+    // Write your code here
+    int ans;
+    if(n<10)
+        return n;
+    
+    int small=sumOfDigits(n/10);
+    
+    ans= (n%10) + small;
+ return ans;
+}
+
+
