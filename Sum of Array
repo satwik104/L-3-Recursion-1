@@ -1,0 +1,10 @@
+int sum(int input[], int n) {
+ 
+	if(n==0)
+        return 0;
+    if(n==1)
+        return input[n-1];
+    int short_sum = sum(input+1, n-1);
+    int arr_sum = input[0] + short_sum;
+    return arr_sum;
+}
