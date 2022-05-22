@@ -1,0 +1,27 @@
+//Here we dont have to return the output array but its size....
+//it will br printed by main function.
+//The small_check we are returning is actually the size of output,
+//array which keeps on updating when we add a new,
+//index value in output array.
+int allIndexes(int input[], int size, int x, int output[]) {
+    //BASE CASE
+ if(size == 0)
+     return 0;
+    //RECURSIVE CALL TO HANDEL THE N-1 PART OF ARRAY
+int small_check= allIndexes(input+1, size-1, x, output);
+//CHECK OF THE ELEMENTS WITH X AND RESPECTIVELY DOING WORK
+    if(input[0]==x)
+    {
+		for(int i=small_check-1; i>=0; i--)//we use small_check here in
+        output[i+1]=output[i]+1;//for becoz output array have nothing in it we need to put index in it from input array
+        output[0]=0;
+        small_check++;
+    }
+    else
+    {
+        for(int i=small_check-1; i>=0; i--)
+            output[i]=output[i] + 1;
+    }
+    return small_check;
+
+}
