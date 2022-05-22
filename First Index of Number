@@ -1,0 +1,16 @@
+int firstIndex(int input[], int size, int x) {
+  
+	if(size==0)
+        return -1;
+    if(input[0]==x)
+        return 0;
+    int check_small= firstIndex(input+1,size-1,x);
+    //we need t
+    if(check_small==-1)
+        return -1;
+    else{
+        int index= 1+check_small;
+    return index;
+    }
+    
+}
