@@ -1,0 +1,22 @@
+/*
+  The main two things for this question are:
+  
+    1. Making all the variables double type 
+    2. using power function i.s pow(x,y) where x^y.
+    
+*/
+
+double geometricSum(int k) {
+    // Write your code here
+    double ans;
+    if(k==0)//base case
+        return 1;
+  
+    double small_Gsum = geometricSum(k-1);// recursive call
+    
+    ans = 1/pow(2,k) + small_Gsum;//small  calculation
+    
+return ans;
+}
+
+
