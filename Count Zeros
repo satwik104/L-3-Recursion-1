@@ -1,0 +1,21 @@
+
+int countZeros(int n) {
+    // Write your code here
+    int ans;
+    if(n == 0)//to handel the case of 0
+        return 1;
+    
+    if(n<10) //actuall base case
+        return 0;
+    
+    int small_count= countZeros(n/10);
+    
+    if(n%10 == 0)
+         ans = small_count + 1;
+    else
+         ans = small_count;
+    
+return ans;
+}
+
+
