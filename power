@@ -1,0 +1,12 @@
+int power(int x, int n) {    
+   //base case
+    if(n==0)
+    {
+        return 1;
+    }
+    //recursive call
+    int smallans = power(x,n-1);
+    //our work
+    int finalans= smallans*x;
+    return finalans;
+}
