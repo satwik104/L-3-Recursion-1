@@ -1,0 +1,23 @@
+int lastIndex(int input[], int size, int x) {
+ 
+	if(size==0)
+        return -1;
+    //first we make recursive call
+    int check_small= lastIndex(input+1, size-1, x);
+    //now small calculations
+    //case-1 if we get -1, so we check the first position as its not yet checked
+    if(check_small == -1)
+    {
+     if(input[0]==x)
+         return 0;
+    else
+        return -1;
+    }
+    // case-2 if we dont get -1 but a position then we add 1 to it and return the last index
+    else
+    {
+        int ans= check_small + 1;
+        return ans;
+    }
+    
+}
